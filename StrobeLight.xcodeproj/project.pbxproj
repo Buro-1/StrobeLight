@@ -7,23 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		892131E62A0250D50012B8F5 /* StrobeLightApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892131E52A0250D50012B8F5 /* StrobeLightApp.swift */; };
-		892131E82A0250D50012B8F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892131E72A0250D50012B8F5 /* ContentView.swift */; };
-		892131EA2A0250D60012B8F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892131E92A0250D60012B8F5 /* Assets.xcassets */; };
-		892131EE2A0250D60012B8F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892131ED2A0250D60012B8F5 /* Preview Assets.xcassets */; };
+		892131FB2A0270DE0012B8F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892131E72A0250D50012B8F5 /* ContentView.swift */; };
+		892131FC2A0270DE0012B8F5 /* StrobeLightApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892131E52A0250D50012B8F5 /* StrobeLightApp.swift */; };
+		892131FD2A0270DE0012B8F5 /* BeatDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892131F42A0251090012B8F5 /* BeatDetector.swift */; };
+		892132002A0270DE0012B8F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892131ED2A0250D60012B8F5 /* Preview Assets.xcassets */; };
+		892132012A0270DE0012B8F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892131E92A0250D60012B8F5 /* Assets.xcassets */; };
+		89352C452A02A51B00FB60A9 /* Flash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89352C442A02A51B00FB60A9 /* Flash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		892131E22A0250D50012B8F5 /* StrobeLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrobeLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892131E52A0250D50012B8F5 /* StrobeLightApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrobeLightApp.swift; sourceTree = "<group>"; };
 		892131E72A0250D50012B8F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		892131E92A0250D60012B8F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		892131EB2A0250D60012B8F5 /* StrobeLight.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StrobeLight.entitlements; sourceTree = "<group>"; };
 		892131ED2A0250D60012B8F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		892131F42A0251090012B8F5 /* BeatDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatDetector.swift; sourceTree = "<group>"; };
+		892132052A0270DE0012B8F5 /* StrobeLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrobeLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		892132062A0270DE0012B8F5 /* StrobeLight copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "StrobeLight copy-Info.plist"; path = "/Users/jesseb0rn/Desktop/StrobeLight/StrobeLight copy-Info.plist"; sourceTree = "<absolute>"; };
+		89352C442A02A51B00FB60A9 /* Flash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		892131DF2A0250D50012B8F5 /* Frameworks */ = {
+		892131FE2A0270DE0012B8F5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,13 +43,14 @@
 			children = (
 				892131E42A0250D50012B8F5 /* StrobeLight */,
 				892131E32A0250D50012B8F5 /* Products */,
+				892132062A0270DE0012B8F5 /* StrobeLight copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		892131E32A0250D50012B8F5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				892131E22A0250D50012B8F5 /* StrobeLight.app */,
+				892132052A0270DE0012B8F5 /* StrobeLight.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +60,8 @@
 			children = (
 				892131E52A0250D50012B8F5 /* StrobeLightApp.swift */,
 				892131E72A0250D50012B8F5 /* ContentView.swift */,
+				892131F42A0251090012B8F5 /* BeatDetector.swift */,
+				89352C442A02A51B00FB60A9 /* Flash.swift */,
 				892131E92A0250D60012B8F5 /* Assets.xcassets */,
 				892131EB2A0250D60012B8F5 /* StrobeLight.entitlements */,
 				892131EC2A0250D60012B8F5 /* Preview Content */,
@@ -72,13 +80,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		892131E12A0250D50012B8F5 /* StrobeLight */ = {
+		892131F92A0270DE0012B8F5 /* StrobeLight */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 892131F12A0250D60012B8F5 /* Build configuration list for PBXNativeTarget "StrobeLight" */;
+			buildConfigurationList = 892132022A0270DE0012B8F5 /* Build configuration list for PBXNativeTarget "StrobeLight" */;
 			buildPhases = (
-				892131DE2A0250D50012B8F5 /* Sources */,
-				892131DF2A0250D50012B8F5 /* Frameworks */,
-				892131E02A0250D50012B8F5 /* Resources */,
+				892131FA2A0270DE0012B8F5 /* Sources */,
+				892131FE2A0270DE0012B8F5 /* Frameworks */,
+				892131FF2A0270DE0012B8F5 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -86,7 +94,7 @@
 			);
 			name = StrobeLight;
 			productName = StrobeLight;
-			productReference = 892131E22A0250D50012B8F5 /* StrobeLight.app */;
+			productReference = 892132052A0270DE0012B8F5 /* StrobeLight.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,11 +106,6 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
-				TargetAttributes = {
-					892131E12A0250D50012B8F5 = {
-						CreatedOnToolsVersion = 14.2;
-					};
-				};
 			};
 			buildConfigurationList = 892131DD2A0250D50012B8F5 /* Build configuration list for PBXProject "StrobeLight" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -117,30 +120,32 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				892131E12A0250D50012B8F5 /* StrobeLight */,
+				892131F92A0270DE0012B8F5 /* StrobeLight */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		892131E02A0250D50012B8F5 /* Resources */ = {
+		892131FF2A0270DE0012B8F5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				892131EE2A0250D60012B8F5 /* Preview Assets.xcassets in Resources */,
-				892131EA2A0250D60012B8F5 /* Assets.xcassets in Resources */,
+				892132002A0270DE0012B8F5 /* Preview Assets.xcassets in Resources */,
+				892132012A0270DE0012B8F5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		892131DE2A0250D50012B8F5 /* Sources */ = {
+		892131FA2A0270DE0012B8F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				892131E82A0250D50012B8F5 /* ContentView.swift in Sources */,
-				892131E62A0250D50012B8F5 /* StrobeLightApp.swift in Sources */,
+				89352C452A02A51B00FB60A9 /* Flash.swift in Sources */,
+				892131FB2A0270DE0012B8F5 /* ContentView.swift in Sources */,
+				892131FC2A0270DE0012B8F5 /* StrobeLightApp.swift in Sources */,
+				892131FD2A0270DE0012B8F5 /* BeatDetector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +261,7 @@
 			};
 			name = Release;
 		};
-		892131F22A0250D60012B8F5 /* Debug */ = {
+		892132032A0270DE0012B8F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -269,6 +274,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "StrobeLight copy-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use the microphone to time strobes to beat";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -287,14 +294,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.jesseb0rn.StrobeLight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		892131F32A0250D60012B8F5 /* Release */ = {
+		892132042A0270DE0012B8F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -307,6 +316,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "StrobeLight copy-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use the microphone to time strobes to beat";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -325,7 +336,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.jesseb0rn.StrobeLight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -344,11 +357,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		892131F12A0250D60012B8F5 /* Build configuration list for PBXNativeTarget "StrobeLight" */ = {
+		892132022A0270DE0012B8F5 /* Build configuration list for PBXNativeTarget "StrobeLight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				892131F22A0250D60012B8F5 /* Debug */,
-				892131F32A0250D60012B8F5 /* Release */,
+				892132032A0270DE0012B8F5 /* Debug */,
+				892132042A0270DE0012B8F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
