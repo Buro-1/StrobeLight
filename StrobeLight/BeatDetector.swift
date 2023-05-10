@@ -56,7 +56,7 @@ class BeatAnalyzer {
         let audioSession = AVAudioSession.sharedInstance()
         
         // Ask the user for permission to use the mic if required then start the engine.
-        try audioSession.setCategory(.record)
+        try audioSession.setCategory(.record, options: .mixWithOthers)
         audioSession.requestRecordPermission { [weak self] success in
             guard success, let self = self else { return }
             try? self.audioEngine.start()
@@ -79,7 +79,10 @@ class BeatAnalyzer {
         print(self.lastFFTres)
         let bins = SignalProcessing.bins(data: fftMagnitudes)
         
-        setFlashLevel(_level: bins[0])
+//        let _bins_maxxed = (bins[0] > 1.0 ? 1.0 : bins[0])
+        let value = (bins[0]+bins[1]) > 0.25 ? Float(1.0) : Float(0.0)
+        
+        Torch.setTorch(to: value)
     }
 
 }
@@ -121,8 +124,8 @@ class SignalProcessing {
         return normalizedMagnitudes
     }
     static func bins(data: [Float]) -> [Float] {
-        let limits =            [50,   100,  150,  200,    250,   300]
-        let bin_size: [Float] =    [50.0, 50.0,  50.0,  50.0,   50.0,  212.0]
+        let limits =            [10,   20,  30,  50,    150,   300]
+        let bin_size: [Float] =    [10.0, 10.0,  20.0,  100.0,   150.0,  212.0]
         var bins = [Float](repeating: 0.0, count: 6)
         
         var curr_bin = 0
