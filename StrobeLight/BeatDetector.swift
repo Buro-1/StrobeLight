@@ -16,6 +16,13 @@ class BeatAnalyzer {
     let mixerNode = AVAudioMixerNode()
     
     var lastFFTres: [Float] = [1.0, 0.0, 5.0, 0.0]
+    var lastBinsres: [Float] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    var lastBinsDerivative: [Float] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    
+    
+    var avg_value = Float(0.0)
+    var avg_cnt = Float(1.0)
+    var avg_dev = Float(0.0)
     
     // Fourier-transform verarbeitet das Signal in einzelne Frequenzen
     //fft setup object for 1024 values going forward (time domain -> frequency domain)
@@ -76,12 +83,24 @@ class BeatAnalyzer {
         
         let fftMagnitudes = SignalProcessing.fft(data: channelData, setup: fftSetup!)
         self.lastFFTres = fftMagnitudes
-        print(self.lastFFTres)
+//        print(self.lastFFTres)
         let bins = SignalProcessing.bins(data: fftMagnitudes)
         
-//        let _bins_maxxed = (bins[0] > 1.0 ? 1.0 : bins[0])
-        let value = (bins[0]+bins[1]) > 0.25 ? Float(1.0) : Float(0.0)
+        self.lastBinsDerivative = SignalProcessing.derivative(data: bins, old_data: lastBinsres)
         
+        lastBinsres = bins
+        
+        avg_cnt += 1
+        let total = (avg_value*(avg_cnt - 1.0))
+                     
+        avg_value = (total+lastBinsDerivative[0])/avg_cnt
+        
+        let total_deviation = avg_dev*(avg_cnt - 1.0)
+        avg_dev = (total_deviation + (abs(lastBinsDerivative[0]) - avg_value))/avg_cnt
+//        let value = (bins[0]+bins[1]) > 0.20 ? Float(1.0) : Float(0.0)
+//        let value = lastBinsDerivative[0] > 0.075 ? Float(1.0) : 0.0
+        let value = lastBinsDerivative[0] > avg_dev*1.5 ? Float(1.0) : 0.0
+        print("avg \(avg_value) std dev \(avg_dev)")
         Torch.setTorch(to: value)
     }
 
@@ -137,5 +156,13 @@ class SignalProcessing {
         }
         
         return bins
+    }
+    
+    static func derivative(data: [Float], old_data: [Float]) -> [Float] {
+        var derivative: [Float] = []
+        for i in 0...5 {
+            derivative.append(old_data[i] - data[i])
+        }
+        return derivative
     }
 }

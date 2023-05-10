@@ -4,7 +4,6 @@
 //
 //  Created by Jesse Born on 03.05.23.
 //
-
 import SwiftUI
 import Charts
 
@@ -18,10 +17,11 @@ struct ContentView: View {
     @State private var offset = CGSize.zero
     
     @State private var mode = 0
-    //    @State private var freq = 0.0
-    
-    //    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
-    //    @State var index = 0
+//        @State private var freq = 0.0
+    #if GRAPH
+    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    @State var index = 0
+    #endif
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -93,27 +93,32 @@ struct ContentView: View {
                 Spacer()
                 Text("Music Mode").frame(maxWidth: .infinity, alignment: .trailing)
             }.zIndex(0)
-            //            VStack {
-            //                Text("\(freq)").offset(CGSize(width: 0.0, height: 100.0))
-            //            }
             HStack {
                 Text("Drag to start")
                 Image(systemName: "arrow.up.and.down")
                 Spacer()
             }
-            //            Debug graph for FFT
-            //            VStack {
-            //                Spacer()
-            //                Chart {
-            //                    ForEach((0...ba.lastFFTres.count-1), id: \.self) {
-            //                        LineMark(x: .value("Relative value", ba.lastFFTres[$0]), y: .value("Freq", $0), series: .value("audio", "A"))
-            //                    }
-            //                }
-            //                Text("\(index)")
-            //            }.onReceive(timer, perform: { _ in
-            //                print("updating")
-            //                index += 1
-            //            })
+            
+            #if GRAPH
+//          Debug graph for FFT
+                        VStack {
+                            Spacer()
+                            Chart {
+                                ForEach((0...ba.lastFFTres.count-1), id: \.self) {
+                                    LineMark(x: .value("Relative value", ba.lastFFTres[$0]), y: .value("Freq", $0), series: .value("audio", "A"))
+                                }
+                                ForEach((0...ba.lastBinsres.count-1), id: \.self) {
+                                    LineMark(x: .value("Relative value", ba.lastBinsres[$0]), y: .value("Freq", $0), series: .value("bins", "A")).foregroundStyle(.green)
+                                }
+                                ForEach((0...ba.lastBinsDerivative.count-1), id: \.self) {
+                                    LineMark(x: .value("Relative value", ba.lastBinsDerivative[$0]), y: .value("Freq", $0), series: .value("derivative", "B")).foregroundStyle(.red)
+                                }
+                            }
+                            Text("\(index)")
+                        }.onReceive(timer, perform: { _ in
+                            index += 1
+                        })
+            #endif
         }
         .padding()
     }
