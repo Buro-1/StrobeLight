@@ -10,7 +10,7 @@ import Charts
 struct ContentView: View {
     
     @StateObject var ba: BeatAnalyzer = BeatAnalyzer()
-    @StateObject var fl: Flasher = Flasher()
+    @StateObject var fl: TourchDriver = TourchDriver()
     
     var body: some View {
         NavigationView() {

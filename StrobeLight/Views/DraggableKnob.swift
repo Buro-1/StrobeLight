@@ -14,7 +14,7 @@ struct DraggableKnob: View {
     
     @State private var mode = 0
     @EnvironmentObject var ba: BeatAnalyzer
-    @EnvironmentObject var fl: Flasher
+    @EnvironmentObject var td: TourchDriver
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -44,11 +44,11 @@ struct DraggableKnob: View {
                                         mode = 1
                                     }
                                 }
-                                fl.stop()
-                                fl.frequency = abs(offset.height / UIScreen.main.bounds.height) * 55.0
+                                td.stop()
+                                td.frequency = abs(offset.height / UIScreen.main.bounds.height) * 55.0
                                 //                                    self.freq = abs(offset.height / UIScreen.main.bounds.height) * 55.0
 //                                    print("new freq: ", fl.frequency)
-                                print("\(fl.frequency) in mode \(mode)")
+                                print("\(td.frequency) in mode \(mode)")
                                 
                             }
                             .onEnded { _ in
@@ -57,18 +57,18 @@ struct DraggableKnob: View {
                                     withAnimation {
                                         offset = .zero
                                     }
-                                    fl.stop()
+                                    td.stop()
                                 } else if (mode == 1) {
                                     // commit new freqency
-                                    if (fl.frequency != 0.0) {
-                                        fl.startFlashing()
+                                    if (td.frequency != 0.0) {
+                                        td.startFlashing()
                                     } else {
-                                        fl.stop()
+                                        td.stop()
                                     }
                                 } else if (mode == 2) {
                                     do {
-                                        fl.stop()
-                                        fl.frequency = 0
+                                        td.stop()
+                                        td.frequency = 0
                                         try ba.startListening()
                                     }
                                     catch {}

@@ -24,27 +24,18 @@ class BeatAnalyzer: ObservableObject {
     var avg_cnt = Float(1.0)
     var avg_dev = Float(0.0)
     
-    // Fourier-transform verarbeitet das Signal in einzelne Frequenzen
-    //fft setup object for 1024 values going forward (time domain -> frequency domain)
     let fftSetup = vDSP_DFT_zop_CreateSetup(nil, 1024, vDSP_DFT_Direction.FORWARD)
     
     private var ready = false
     
     private func configureAudioEngine() {
-        // Get the native audio format of the engine's input bus.
         let inputFormat = audioEngine.inputNode.inputFormat(forBus: 0)
-        
-        // Set an output format compatible with ShazamKit.
+
         let outputFormat = AVAudioFormat(standardFormatWithSampleRate: 48000, channels: 1)
-        
-        // Create a mixer node to convert the input.
+
         audioEngine.attach(mixerNode)
 
-        // Attach the mixer to the microphone input and the output of the audio engine.
         audioEngine.connect(audioEngine.inputNode, to: mixerNode, format: inputFormat)
-        // audioEngine.connect(mixerNode, to: audioEngine.outputNode, format: outputFormat)
-            
-        // Install a tap on the mixer node to capture the microphone audio.
         mixerNode.installTap(onBus: 0,
                              bufferSize: 1024,
                              format: outputFormat) { buffer, audioTime in
@@ -58,11 +49,11 @@ class BeatAnalyzer: ObservableObject {
             self.configureAudioEngine()
         }
         
-        // Throw an error if the audio engine is already running.
+        // Falls die AudioEngine schon läuft abbrechen
         guard !audioEngine.isRunning else { return }
         let audioSession = AVAudioSession.sharedInstance()
         
-        // Ask the user for permission to use the mic if required then start the engine.
+        // Nutzer nach Berechtigung fragen
         try audioSession.setCategory(.record, options: .mixWithOthers)
         audioSession.requestRecordPermission { [weak self] success in
             guard success, let self = self else { return }
@@ -71,7 +62,7 @@ class BeatAnalyzer: ObservableObject {
         print("started")
     }
     func stopListening() {
-        // Check if the audio engine is already recording.
+        // Engine stoppen wenn diese läuft
         if audioEngine.isRunning {
             audioEngine.stop()
         }
@@ -79,11 +70,9 @@ class BeatAnalyzer: ObservableObject {
     
     func processAudioData(buffer: AVAudioPCMBuffer){
         guard let channelData = buffer.floatChannelData?[0] else {return}
-        // let frames = buffer.frameLength
         
         let fftMagnitudes = SignalProcessing.fft(data: channelData, setup: fftSetup!)
         self.lastFFTres = fftMagnitudes
-//        print(self.lastFFTres)
         let bins = SignalProcessing.bins(data: fftMagnitudes)
         
         self.lastBinsDerivative = SignalProcessing.derivative(data: bins, old_data: lastBinsres)
@@ -97,8 +86,7 @@ class BeatAnalyzer: ObservableObject {
         
         let total_deviation = avg_dev*(avg_cnt - 1.0)
         avg_dev = (total_deviation + (abs(lastBinsDerivative[0]) - avg_value))/avg_cnt
-//        let value = (bins[0]+bins[1]) > 0.20 ? Float(1.0) : Float(0.0)
-//        let value = lastBinsDerivative[0] > 0.075 ? Float(1.0) : 0.0
+
         let value = lastBinsDerivative[0] > avg_dev*1.5 ? Float(1.0) : 0.0
         print("avg \(avg_value) std dev \(avg_dev)")
         Torch.setTorch(to: value)
@@ -106,17 +94,16 @@ class BeatAnalyzer: ObservableObject {
 
 }
 
-// https://betterprogramming.pub/audio-visualization-in-swift-using-metal-accelerate-part-1-390965c095d7
 class SignalProcessing {
     
     static func fft(data: UnsafeMutablePointer<Float>, setup: OpaquePointer) -> [Float] {
-        //output setup
+        // Setup output
         var realIn = [Float](repeating: 0, count: 1024)
         var imagIn = [Float](repeating: 0, count: 1024)
         var realOut = [Float](repeating: 0, count: 1024)
         var imagOut = [Float](repeating: 0, count: 1024)
 
-        //fill in real input part with audio samples
+        // PLatzhalter einfüllen
         for i in 0...1023 {
             realIn[i] = data[i]
         }
@@ -124,18 +111,13 @@ class SignalProcessing {
         
         vDSP_DFT_Execute(setup, &realIn, &imagIn, &realOut, &imagOut)
 
-        //our results are now inside realOut and imagOut
-        
-        //package it inside a complex vector representation used in the vDSP framework
         var complex = DSPSplitComplex(realp: &realOut, imagp: &imagOut)
         
-        //setup magnitude output
         var magnitudes = [Float](repeating: 0, count: 512)
         
-        //calculate magnitude results
         vDSP_zvabs(&complex, 1, &magnitudes, 1, 512)
         
-        //normalize
+        // Daten normalisieren
         var normalizedMagnitudes = [Float](repeating: 0.0, count: 512)
         var scalingFactor = Float(25.0/512)
         vDSP_vsmul(&magnitudes, 1, &scalingFactor, &normalizedMagnitudes, 1, 512)
