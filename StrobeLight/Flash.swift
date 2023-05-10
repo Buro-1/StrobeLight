@@ -8,24 +8,16 @@
 import Foundation
 import AVFoundation
 
-class Flasher {
-    public var frequency = 2.0
+class Flasher: ObservableObject {
+    @Published public var frequency = 0.0
     var active = false
 //    var blinker_t: Thread?
     
-    var timer: Timer?
-    var on = false
+    private var timer: Timer?
+    private var on = false
     
     func startFlashing() {
         self.active = true
-//        blinker_t?.cancel()
-//        blinker_t = Thread(block: {
-//            while (self.active) {
-//                Torch.blink(5, duration: 1.0/self.frequency, gap: 1.0/self.frequency)
-//            }
-//        })
-//        blinker_t!.start()
-        
         timer = Timer.scheduledTimer(withTimeInterval: 1.0/frequency, repeats: true, block: {_ in
             if (self.on) {
                 Torch.setTorch(to: 0)

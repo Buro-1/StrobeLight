@@ -13,6 +13,9 @@
 		892132002A0270DE0012B8F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892131ED2A0250D60012B8F5 /* Preview Assets.xcassets */; };
 		892132012A0270DE0012B8F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892131E92A0250D60012B8F5 /* Assets.xcassets */; };
 		89352C452A02A51B00FB60A9 /* Flash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89352C442A02A51B00FB60A9 /* Flash.swift */; };
+		895C93BA2A0C241B00DBC132 /* DraggableKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C93B92A0C241B00DBC132 /* DraggableKnob.swift */; };
+		895C93BC2A0C265000DBC132 /* RightHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C93BB2A0C265000DBC132 /* RightHintView.swift */; };
+		895C93BE2A0C26C000DBC132 /* LeftHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C93BD2A0C26C000DBC132 /* LeftHintView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		892132052A0270DE0012B8F5 /* StrobeLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrobeLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892132062A0270DE0012B8F5 /* StrobeLight copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "StrobeLight copy-Info.plist"; path = "/Users/jesseb0rn/Desktop/StrobeLight/StrobeLight copy-Info.plist"; sourceTree = "<absolute>"; };
 		89352C442A02A51B00FB60A9 /* Flash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flash.swift; sourceTree = "<group>"; };
+		895C93B92A0C241B00DBC132 /* DraggableKnob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableKnob.swift; sourceTree = "<group>"; };
+		895C93BB2A0C265000DBC132 /* RightHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightHintView.swift; sourceTree = "<group>"; };
+		895C93BD2A0C26C000DBC132 /* LeftHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftHintView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 			children = (
 				892131E52A0250D50012B8F5 /* StrobeLightApp.swift */,
 				892131E72A0250D50012B8F5 /* ContentView.swift */,
+				895C93BD2A0C26C000DBC132 /* LeftHintView.swift */,
+				895C93BB2A0C265000DBC132 /* RightHintView.swift */,
+				895C93B92A0C241B00DBC132 /* DraggableKnob.swift */,
 				892131F42A0251090012B8F5 /* BeatDetector.swift */,
 				89352C442A02A51B00FB60A9 /* Flash.swift */,
 				892131E92A0250D60012B8F5 /* Assets.xcassets */,
@@ -145,7 +154,10 @@
 				89352C452A02A51B00FB60A9 /* Flash.swift in Sources */,
 				892131FB2A0270DE0012B8F5 /* ContentView.swift in Sources */,
 				892131FC2A0270DE0012B8F5 /* StrobeLightApp.swift in Sources */,
+				895C93BE2A0C26C000DBC132 /* LeftHintView.swift in Sources */,
 				892131FD2A0270DE0012B8F5 /* BeatDetector.swift in Sources */,
+				895C93BC2A0C265000DBC132 /* RightHintView.swift in Sources */,
+				895C93BA2A0C241B00DBC132 /* DraggableKnob.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

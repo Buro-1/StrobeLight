@@ -11,7 +11,7 @@ import AudioToolbox
 import Accelerate
 
 
-class BeatAnalyzer {
+class BeatAnalyzer: ObservableObject {
     public let audioEngine = AVAudioEngine()
     let mixerNode = AVAudioMixerNode()
     
