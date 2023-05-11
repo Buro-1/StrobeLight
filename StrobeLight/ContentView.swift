@@ -18,6 +18,7 @@ struct ContentView: View {
                 DraggableKnob()
                 RightHintView()
                 LeftHintView()
+                CreditsButtonView()
             }
             .padding()
         }.environmentObject(ba)

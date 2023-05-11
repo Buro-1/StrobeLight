@@ -7,9 +7,11 @@
 
 import Foundation
 import AVFoundation
+import SwiftUI
 
 class TourchDriver: ObservableObject {
     @Published public var frequency = 0.0
+    @AppStorage("flashes") private var flashCount = 0
     var active = false
     
     private var timer: Timer?
@@ -21,6 +23,7 @@ class TourchDriver: ObservableObject {
             if (self.on) {
                 Torch.setTorch(to: 0)
             } else {
+                self.flashCount += 1
                 Torch.setTorch(to: 1.0)
             }
             self.on = !self.on
