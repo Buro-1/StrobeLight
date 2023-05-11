@@ -20,12 +20,12 @@ struct CreditsButtonView: View {
                     Label("", systemImage: "info.circle")
                 }.sheet(isPresented: $creditsOpen) {
                     VStack {
-                        Text("Flashed \(flashCount) times.")
+                        Text("flashed-n-times \(flashCount)")
                         Spacer()
-                        Text("StrobeLight was developed by Jesse Born, Elias Denzler, and Janis Hunziker as a high school project in informatics. The app is provided without warranties and is distributed as is.")
+                        Text("credits-text")
                         Spacer()
                         Text("© 2023")
-                    }.padding().presentationDetents([.fraction(0.28)])
+                    }.padding().presentationDetents([.fraction(0.35)])
                 }
                 Spacer()
             }

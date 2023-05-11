@@ -21,6 +21,8 @@
 		895C93D82A0C358600DBC132 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C93D72A0C358600DBC132 /* SnapshotHelper.swift */; };
 		895C93DA2A0C358D00DBC132 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = 895C93D92A0C358D00DBC132 /* Snapfile */; };
 		895C93E02A0D36D300DBC132 /* CreditsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C93DF2A0D36D300DBC132 /* CreditsButtonView.swift */; };
+		895C93E52A0D879100DBC132 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 895C93E72A0D879100DBC132 /* Localizable.strings */; };
+		895C93EA2A0D87B600DBC132 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 895C93EC2A0D87B600DBC132 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		895C93D72A0C358600DBC132 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		895C93D92A0C358D00DBC132 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Snapfile; path = fastlane/Snapfile; sourceTree = SOURCE_ROOT; };
 		895C93DF2A0D36D300DBC132 /* CreditsButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsButtonView.swift; sourceTree = "<group>"; };
+		895C93E62A0D879100DBC132 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		895C93EB2A0D87B600DBC132 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		895C93EF2A0D891200DBC132 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8974C6072A0D897300539028 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,8 @@
 		892131D92A0250D50012B8F5 = {
 			isa = PBXGroup;
 			children = (
+				895C93E72A0D879100DBC132 /* Localizable.strings */,
+				895C93EC2A0D87B600DBC132 /* Localizable.strings */,
 				895C93C12A0C2E3A00DBC132 /* LS.storyboard */,
 				892131E42A0250D50012B8F5 /* StrobeLight */,
 				895C93CC2A0C33F800DBC132 /* StrobeLightUITests */,
@@ -204,7 +212,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 				Base,
+				fr,
 			);
 			mainGroup = 892131D92A0250D50012B8F5;
 			productRefGroup = 892131E32A0250D50012B8F5 /* Products */;
@@ -222,7 +232,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895C93EA2A0D87B600DBC132 /* Localizable.strings in Resources */,
 				892132002A0270DE0012B8F5 /* Preview Assets.xcassets in Resources */,
+				895C93E52A0D879100DBC132 /* Localizable.strings in Resources */,
 				892132012A0270DE0012B8F5 /* Assets.xcassets in Resources */,
 				895C93C22A0C2E3A00DBC132 /* LS.storyboard in Resources */,
 			);
@@ -272,6 +284,27 @@
 			targetProxy = 895C93D12A0C33F800DBC132 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		895C93E72A0D879100DBC132 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				895C93E62A0D879100DBC132 /* en */,
+				895C93EF2A0D891200DBC132 /* fr */,
+				8974C6072A0D897300539028 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		895C93EC2A0D87B600DBC132 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				895C93EB2A0D87B600DBC132 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		892131EF2A0250D60012B8F5 /* Debug */ = {

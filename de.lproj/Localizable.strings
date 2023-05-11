@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  StrobeLight
+
+  Created by Jesse Born on 11.05.23.
+  
+*/
+"off-label" = "Aus";
+"auto-label" = "Musikmodus";
+"drag-to-start" = "Zum starten\nwischen";
+"flashed-n-times %lld" = "%lld Male geblitzt";
+"credits-text" = "StrobeLight wurde von Jesse Born, Elias Denzler und Janis Hunziker im Rahmen eines Informatikprojekts an der Alten Kantonsschule Aarau entwickelt. Die App wird ohne Gewährleistung bereitgestellt und im vorliegenden Zustand verkauft.";

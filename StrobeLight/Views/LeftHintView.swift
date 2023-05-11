@@ -10,7 +10,7 @@ import SwiftUI
 struct LeftHintView: View {
     var body: some View {
         HStack {
-            Text("Drag to \nstart")
+            Text("drag-to-start")
             Image(systemName: "arrow.up.and.down")
             Spacer()
         }

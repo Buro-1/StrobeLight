@@ -12,9 +12,9 @@ struct RightHintView: View {
         VStack {
             Text("25 Hz").frame(maxWidth: .infinity, alignment: .trailing)
             Spacer()
-            Text("Off").frame(maxWidth: .infinity, alignment: .trailing)
+            Text("off-label").frame(maxWidth: .infinity, alignment: .trailing)
             Spacer()
-            Text("Music Mode").frame(maxWidth: .infinity, alignment: .trailing)
+            Text("auto-label").frame(maxWidth: .infinity, alignment: .trailing)
         }.zIndex(0)
     }
 }
