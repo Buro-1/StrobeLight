@@ -9,9 +9,9 @@ devices([
 ])
 
 languages([
-  "en",
-  "de",
-  "fr"
+  "en-GB",
+  "de-DE",
+  "fr-FR"
 ])
 
 # The name of the scheme which contains the UI Tests

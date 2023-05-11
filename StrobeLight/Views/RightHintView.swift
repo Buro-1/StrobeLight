@@ -10,11 +10,11 @@ import SwiftUI
 struct RightHintView: View {
     var body: some View {
         VStack {
-            Text("25 Hz").frame(maxWidth: .infinity, alignment: .trailing)
+            Text("25 Hz").frame(maxWidth: .infinity, alignment: .trailing).accessibilityIdentifier("25hz")
             Spacer()
             Text("off-label").frame(maxWidth: .infinity, alignment: .trailing)
             Spacer()
-            Text("auto-label").frame(maxWidth: .infinity, alignment: .trailing)
+            Text("auto-label").frame(maxWidth: .infinity, alignment: .trailing).accessibilityIdentifier("musicmode")
         }.zIndex(0)
     }
 }

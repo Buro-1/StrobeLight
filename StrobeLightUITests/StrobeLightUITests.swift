@@ -30,8 +30,12 @@ final class StrobeLightUITests: XCTestCase {
         snapshot("0-Home")
         print(XCUIApplication().debugDescription)
         let powerknob = app.images.element(matching: .image, identifier: "Knob")
-        let onLabel = app.staticTexts["25 Hz"]
-        let autoLabel = app.staticTexts["Music Mode"]
+        
+        let onLabel = app.staticTexts.element(matching: .staticText, identifier: "25hz")
+//        let onLabel = app.staticTexts["25 Hz"]
+        let autoLabel = app.staticTexts.element(matching: .staticText, identifier: "musicmode")
+//        let autoLabel = app.staticTexts["Music Mode"]
+        
         
         powerknob.press(forDuration: 0.25, thenDragTo: onLabel, withVelocity: .default, thenHoldForDuration: 0.25)
         snapshot("1-On")
