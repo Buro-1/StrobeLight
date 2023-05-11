@@ -22,6 +22,7 @@ struct DraggableKnob: View {
         VStack {
             ZStack {
                 Image(systemName: "power.circle").resizable().frame(width: 80.0, height: 80.0)
+                    .accessibilityIdentifier("Knob")
                     .offset(x: 0, y: offset.height)
                     .gesture(
                         DragGesture()
@@ -74,7 +75,9 @@ struct DraggableKnob: View {
                                     catch {}
                                 }
                             }
-                    ).zIndex(5)
+                    )
+                    .zIndex(5)
+                    
                 Circle().frame(width: 110.0).zIndex(3).foregroundColor(.init(white: colorScheme == .dark ? 1.0 : 0.0, opacity: colorScheme == .dark ? 0.25 : 0.1))
             }
         }.zIndex(1)
