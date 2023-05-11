@@ -20,6 +20,7 @@
 		895C93CE2A0C33F800DBC132 /* StrobeLightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C93CD2A0C33F800DBC132 /* StrobeLightUITests.swift */; };
 		895C93D82A0C358600DBC132 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C93D72A0C358600DBC132 /* SnapshotHelper.swift */; };
 		895C93DA2A0C358D00DBC132 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = 895C93D92A0C358D00DBC132 /* Snapfile */; };
+		895C93E02A0D36D300DBC132 /* CreditsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C93DF2A0D36D300DBC132 /* CreditsButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		895C93CD2A0C33F800DBC132 /* StrobeLightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrobeLightUITests.swift; sourceTree = "<group>"; };
 		895C93D72A0C358600DBC132 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		895C93D92A0C358D00DBC132 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Snapfile; path = fastlane/Snapfile; sourceTree = SOURCE_ROOT; };
+		895C93DF2A0D36D300DBC132 /* CreditsButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				895C93BD2A0C26C000DBC132 /* LeftHintView.swift */,
-				895C93DD2A0D2FED00DBC132 /* CreditsButtonView.swift */,
+				895C93DF2A0D36D300DBC132 /* CreditsButtonView.swift */,
 				895C93BB2A0C265000DBC132 /* RightHintView.swift */,
 				895C93B92A0C241B00DBC132 /* DraggableKnob.swift */,
 			);
@@ -248,7 +250,7 @@
 				892131FD2A0270DE0012B8F5 /* BeatDetector.swift in Sources */,
 				895C93BC2A0C265000DBC132 /* RightHintView.swift in Sources */,
 				895C93BA2A0C241B00DBC132 /* DraggableKnob.swift in Sources */,
-				895C93DE2A0D2FED00DBC132 /* CreditsButtonView.swift in Sources */,
+				895C93E02A0D36D300DBC132 /* CreditsButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
