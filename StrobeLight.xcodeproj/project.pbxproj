@@ -24,8 +24,6 @@
 		895C93E52A0D879100DBC132 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 895C93E72A0D879100DBC132 /* Localizable.strings */; };
 		895C93EA2A0D87B600DBC132 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 895C93EC2A0D87B600DBC132 /* Localizable.strings */; };
 		89B172182A0EC251000B82BF /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 89B172172A0EC251000B82BF /* Documentation.docc */; };
-		89B1721B2A0EDEC8000B82BF /* snippet-extract in Frameworks */ = {isa = PBXBuildFile; productRef = 89B1721A2A0EDEC8000B82BF /* snippet-extract */; };
-		89B1721F2A0EDF95000B82BF /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B1721E2A0EDF95000B82BF /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +60,6 @@
 		895C93EF2A0D891200DBC132 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8974C6072A0D897300539028 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		89B172172A0EC251000B82BF /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
-		89B1721E2A0EDF95000B82BF /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B1721B2A0EDEC8000B82BF /* snippet-extract in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +83,6 @@
 		892131D92A0250D50012B8F5 = {
 			isa = PBXGroup;
 			children = (
-				89B1721E2A0EDF95000B82BF /* Package.swift */,
 				89B172172A0EC251000B82BF /* Documentation.docc */,
 				895C93E72A0D879100DBC132 /* Localizable.strings */,
 				895C93EC2A0D87B600DBC132 /* Localizable.strings */,
@@ -177,7 +172,6 @@
 			);
 			name = StrobeLight;
 			packageProductDependencies = (
-				89B1721A2A0EDEC8000B82BF /* snippet-extract */,
 			);
 			productName = StrobeLight;
 			productReference = 892132052A0270DE0012B8F5 /* StrobeLight.app */;
@@ -229,7 +223,6 @@
 			);
 			mainGroup = 892131D92A0250D50012B8F5;
 			packageReferences = (
-				89B172192A0EDEC8000B82BF /* XCRemoteSwiftPackageReference "swift-docc-plugin" */,
 			);
 			productRefGroup = 892131E32A0250D50012B8F5 /* Products */;
 			projectDirPath = "";
@@ -275,7 +268,6 @@
 				895C93BE2A0C26C000DBC132 /* LeftHintView.swift in Sources */,
 				89B172182A0EC251000B82BF /* Documentation.docc in Sources */,
 				892131FD2A0270DE0012B8F5 /* BeatDetector.swift in Sources */,
-				89B1721F2A0EDF95000B82BF /* Package.swift in Sources */,
 				895C93BC2A0C265000DBC132 /* RightHintView.swift in Sources */,
 				895C93BA2A0C241B00DBC132 /* DraggableKnob.swift in Sources */,
 				895C93E02A0D36D300DBC132 /* CreditsButtonView.swift in Sources */,
@@ -595,25 +587,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		89B172192A0EDEC8000B82BF /* XCRemoteSwiftPackageReference "swift-docc-plugin" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-docc-plugin";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		89B1721A2A0EDEC8000B82BF /* snippet-extract */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 89B172192A0EDEC8000B82BF /* XCRemoteSwiftPackageReference "swift-docc-plugin" */;
-			productName = "snippet-extract";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 892131DA2A0250D50012B8F5 /* Project object */;
 }
