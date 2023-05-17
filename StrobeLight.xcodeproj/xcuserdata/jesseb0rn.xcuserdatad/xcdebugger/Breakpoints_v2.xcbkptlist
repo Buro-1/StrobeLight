@@ -3,4 +3,86 @@
    uuid = "DFEAC749-2574-4D6F-801F-C480B2F16E54"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7EF8242E-B22C-437E-8715-ABD0FFCF2A23"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StrobeLight/HeavyPart/BeatDetector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "configureAudioEngine()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F37CCC0-5796-4BFA-8236-38FD62917445"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StrobeLight/HeavyPart/MatchingHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "setDelegate()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4459474-9BE1-4117-95CC-AE6A5128AC13"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StrobeLight/HeavyPart/MatchingHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "session(_:didFind:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B4459474-9BE1-4117-95CC-AE6A5128AC13 - 41207099acce3003"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StrobeLight.MatchingHelper.session(_: __C.SHSession, didFind: __C.SHMatch) -&gt; ()"
+                  moduleName = "StrobeLight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesseb0rn/Desktop/StrobeLight/StrobeLight/HeavyPart/MatchingHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  uuid = "B4459474-9BE1-4117-95CC-AE6A5128AC13 - 9bd11dc5f45cf0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in StrobeLight.MatchingHelper.session(_: __C.SHSession, didFind: __C.SHMatch) -&gt; ()"
+                  moduleName = "StrobeLight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesseb0rn/Desktop/StrobeLight/StrobeLight/HeavyPart/MatchingHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
