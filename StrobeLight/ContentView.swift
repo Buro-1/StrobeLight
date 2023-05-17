@@ -14,14 +14,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView() {
-            ZStack {
-                DraggableKnob()
-                RightHintView()
-                LeftHintView()
-                CreditsButtonView()
+            VStack {
+                ZStack {
+                    DraggableKnob()
+                    RightHintView()
+                    LeftHintView()
+                    CreditsButtonView()
+                    ShazamSongView()
+                }
             }
             .padding()
-        }.environmentObject(ba)
+                
+        }
+        .environmentObject(ba)
         .environmentObject(fl)
     }
     init() {}

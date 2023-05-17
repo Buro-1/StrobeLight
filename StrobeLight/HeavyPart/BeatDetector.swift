@@ -9,6 +9,7 @@ import Foundation
 import AVFoundation
 import AudioToolbox
 import Accelerate
+import ShazamKit
 
 /// Diese Klasse bietet die nötige Infrastruktur um:
 ///     - Mikrofonberechtigung einzuholen
@@ -24,6 +25,7 @@ class BeatAnalyzer: ObservableObject {
     public let audioEngine = AVAudioEngine()
     /// AVAudioEngine arbeitet mit einer Art Graph. Diese Node wird verwendet für unsere Verarbeitung
     let mixerNode = AVAudioMixerNode()
+    let shazamNode = AVAudioMixerNode()
     
     /// Letztes Resultat des Fourier-Transfromationsschrittes
     var lastFFTres: [Float] = [1.0, 0.0, 5.0, 0.0]
@@ -39,8 +41,12 @@ class BeatAnalyzer: ObservableObject {
     /// Standartabweichung (s 1-Intervall) der Lautstärke im 1. Bin
     var avg_dev = Float(0.0)
     
-    /// Speicherallocation für Simultanvektor basiertes Fast-Fourier-Transform im komplexen Raum
+    /// Speicherallocation für simultanvektorbasiertes Fast-Fourier-Transform im komplexen Raum
     let fftSetup = vDSP_DFT_zop_CreateSetup(nil, 1024, vDSP_DFT_Direction.FORWARD)
+    
+    /// ShazamKit integration
+    var matchingHelper: MatchingHelper?
+    @Published var lastShazamMatch: SHMatchedMediaItem?
     
     private var ready = false
     
@@ -51,12 +57,32 @@ class BeatAnalyzer: ObservableObject {
         let outputFormat = AVAudioFormat(standardFormatWithSampleRate: 48000, channels: 1)
 
         audioEngine.attach(mixerNode)
+        audioEngine.attach(shazamNode)
+
 
         audioEngine.connect(audioEngine.inputNode, to: mixerNode, format: inputFormat)
+        audioEngine.connect(mixerNode, to: shazamNode, format: inputFormat)
+        
         mixerNode.installTap(onBus: 0,
                              bufferSize: 1024,
                              format: outputFormat) { buffer, audioTime in
+//            print("call hand")
             self.processAudioData(buffer: buffer)
+        }
+        
+        
+        
+        // Shazam
+        
+        self.matchingHelper = MatchingHelper { MediaItem, error in
+            print("matched song: \(MediaItem?.title ?? "--")")
+            self.lastShazamMatch = MediaItem
+        }
+        self.matchingHelper?.session = SHSession()
+        self.matchingHelper?.setDelegate()
+        shazamNode.installTap(onBus: 0, bufferSize: 2048, format: outputFormat) { buffer, audioTime in
+//            print("call shzam")
+            self.matchingHelper?.session?.matchStreamingBuffer(buffer, at: audioTime)
         }
         self.ready = true
     }
@@ -112,7 +138,7 @@ class BeatAnalyzer: ObservableObject {
         
         /// Übersteigt das Derivat der Lautstärke die 1.5x Standardabweichung, wird das Blitzlicht ausgelöst
         let value = lastBinsDerivative[0] > avg_dev*1.5 ? Float(1.0) : 0.0
-        print("avg \(avg_value) std dev \(avg_dev)")
+//        print("avg \(avg_value) std dev \(avg_dev)")
         Torch.setTorch(to: value)
     }
 

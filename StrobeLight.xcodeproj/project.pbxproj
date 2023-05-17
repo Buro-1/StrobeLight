@@ -23,6 +23,8 @@
 		895C93E02A0D36D300DBC132 /* CreditsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895C93DF2A0D36D300DBC132 /* CreditsButtonView.swift */; };
 		895C93E52A0D879100DBC132 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 895C93E72A0D879100DBC132 /* Localizable.strings */; };
 		895C93EA2A0D87B600DBC132 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 895C93EC2A0D87B600DBC132 /* Localizable.strings */; };
+		8965A8392A12425700099BC5 /* MatchingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965A8382A12425700099BC5 /* MatchingHelper.swift */; };
+		8965A83B2A12450500099BC5 /* ShazamSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965A83A2A12450500099BC5 /* ShazamSongView.swift */; };
 		89B172182A0EC251000B82BF /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 89B172172A0EC251000B82BF /* Documentation.docc */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		895C93E62A0D879100DBC132 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		895C93EB2A0D87B600DBC132 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		895C93EF2A0D891200DBC132 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8965A8382A12425700099BC5 /* MatchingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingHelper.swift; sourceTree = "<group>"; };
+		8965A83A2A12450500099BC5 /* ShazamSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamSongView.swift; sourceTree = "<group>"; };
 		8974C6072A0D897300539028 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		89B172172A0EC251000B82BF /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				895C93BD2A0C26C000DBC132 /* LeftHintView.swift */,
+				8965A83A2A12450500099BC5 /* ShazamSongView.swift */,
 				895C93DF2A0D36D300DBC132 /* CreditsButtonView.swift */,
 				895C93BB2A0C265000DBC132 /* RightHintView.swift */,
 				895C93B92A0C241B00DBC132 /* DraggableKnob.swift */,
@@ -140,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				892131F42A0251090012B8F5 /* BeatDetector.swift */,
+				8965A8382A12425700099BC5 /* MatchingHelper.swift */,
 				89352C442A02A51B00FB60A9 /* Driver.swift */,
 			);
 			path = HeavyPart;
@@ -266,10 +272,12 @@
 				892131FB2A0270DE0012B8F5 /* ContentView.swift in Sources */,
 				892131FC2A0270DE0012B8F5 /* StrobeLightApp.swift in Sources */,
 				895C93BE2A0C26C000DBC132 /* LeftHintView.swift in Sources */,
+				8965A83B2A12450500099BC5 /* ShazamSongView.swift in Sources */,
 				89B172182A0EC251000B82BF /* Documentation.docc in Sources */,
 				892131FD2A0270DE0012B8F5 /* BeatDetector.swift in Sources */,
 				895C93BC2A0C265000DBC132 /* RightHintView.swift in Sources */,
 				895C93BA2A0C241B00DBC132 /* DraggableKnob.swift in Sources */,
+				8965A8392A12425700099BC5 /* MatchingHelper.swift in Sources */,
 				895C93E02A0D36D300DBC132 /* CreditsButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,7 +439,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = StrobeLight/StrobeLight.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"StrobeLight/Preview Content\"";
 				DEVELOPMENT_TEAM = 8C7KT6ZU59;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -456,7 +464,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.buro-1.StrobeLight";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,7 +486,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = StrobeLight/StrobeLight.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"StrobeLight/Preview Content\"";
 				DEVELOPMENT_TEAM = 8C7KT6ZU59;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -503,7 +511,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.buro-1.StrobeLight";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
