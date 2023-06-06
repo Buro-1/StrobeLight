@@ -7,7 +7,6 @@
 
 import Foundation
 import AVFoundation
-import AudioToolbox
 import Accelerate
 import ShazamKit
 
